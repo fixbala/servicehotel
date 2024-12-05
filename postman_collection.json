@@ -1,0 +1,142 @@
+{
+    "info": {
+        "name": "Hotel Management API",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Hoteles",
+            "item": [
+                {
+                    "name": "Obtener todos los hoteles",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:8000/hoteles",
+                            "protocol": "http",
+                            "host": ["localhost"],
+                            "port": "8000",
+                            "path": ["hoteles"]
+                        }
+                    }
+                },
+                {
+                    "name": "Crear un hotel",
+                    "request": {
+                        "method": "POST",
+                        "header": [{"key": "Content-Type", "value": "application/json"}],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"nombre\": \"Hotel Test\",\n    \"direccion\": \"Calle 123\",\n    \"ciudad\": \"Bogotá\",\n    \"nit\": \"12345678-9\",\n    \"numero_habitaciones\": 50\n}"
+                        },
+                        "url": {
+                            "raw": "http://localhost:8000/hoteles",
+                            "protocol": "http",
+                            "host": ["localhost"],
+                            "port": "8000",
+                            "path": ["hoteles"]
+                        }
+                    }
+                },
+                {
+                    "name": "Obtener un hotel por ID",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:8000/hoteles/1",
+                            "protocol": "http",
+                            "host": ["localhost"],
+                            "port": "8000",
+                            "path": ["hoteles", "1"]
+                        }
+                    }
+                },
+                {
+                    "name": "Actualizar un hotel",
+                    "request": {
+                        "method": "PUT",
+                        "header": [{"key": "Content-Type", "value": "application/json"}],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"nombre\": \"Hotel Updated\",\n    \"direccion\": \"Calle 456\",\n    \"ciudad\": \"Medellín\",\n    \"nit\": \"12345678-9\",\n    \"numero_habitaciones\": 100\n}"
+                        },
+                        "url": {
+                            "raw": "http://localhost:8000/hoteles/1",
+                            "protocol": "http",
+                            "host": ["localhost"],
+                            "port": "8000",
+                            "path": ["hoteles", "1"]
+                        }
+                    }
+                },
+                {
+                    "name": "Eliminar un hotel",
+                    "request": {
+                        "method": "DELETE",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:8000/hoteles/1",
+                            "protocol": "http",
+                            "host": ["localhost"],
+                            "port": "8000",
+                            "path": ["hoteles", "1"]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Habitaciones",
+            "item": [
+                {
+                    "name": "Obtener todas las habitaciones de un hotel",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:8000/habitaciones/1",
+                            "protocol": "http",
+                            "host": ["localhost"],
+                            "port": "8000",
+                            "path": ["habitaciones", "1"]
+                        }
+                    }
+                },
+                {
+                    "name": "Crear una habitación",
+                    "request": {
+                        "method": "POST",
+                        "header": [{"key": "Content-Type", "value": "application/json"}],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"hotel_id\": 1,\n    \"tipo\": \"Estándar\",\n    \"acomodacion\": \"Sencilla\",\n    \"cantidad\": 10\n}"
+                        },
+                        "url": {
+                            "raw": "http://localhost:8000/habitaciones",
+                            "protocol": "http",
+                            "host": ["localhost"],
+                            "port": "8000",
+                            "path": ["habitaciones"]
+                        }
+                    }
+                },
+                {
+                    "name": "Eliminar una habitación",
+                    "request": {
+                        "method": "DELETE",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:8000/habitaciones/1",
+                            "protocol": "http",
+                            "host": ["localhost"],
+                            "port": "8000",
+                            "path": ["habitaciones", "1"]
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+}
